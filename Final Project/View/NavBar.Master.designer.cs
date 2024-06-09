@@ -132,6 +132,15 @@ namespace Final_Project.View
         protected global::System.Web.UI.WebControls.Button Button_History;
 
         /// <summary>
+        /// Button_Report control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Report;
+
+        /// <summary>
         /// Button_Profile control.
         /// </summary>
         /// <remarks>
