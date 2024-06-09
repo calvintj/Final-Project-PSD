@@ -34,6 +34,7 @@
                     <asp:Button ID="Button_MS" class="navbar_link" runat="server" Text="Manage Supplement" OnClick="Manage_btn_Click" />
                     <asp:Button ID="Button_OQ" class="navbar_link" runat="server" Text="Order Queue" OnClick="Queue_btn_Click" />
                     <asp:Button ID="Button_History" class="navbar_link" runat="server" Text="History" OnClick="History_btn_Click" />
+                    <asp:Button ID="Button_Report" class="navbar_link" runat="server" Text="Report" OnClick="Button_Report_Click" />
                 </div>
                 <div class="navbar-container3">
                     <asp:Button ID="Button_Profile" class="navbar_link" runat="server" Text="Profile" OnClick="Profile_btn_Click" />

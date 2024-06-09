@@ -52,5 +52,10 @@ namespace Final_Project.View
         {
             Response.Redirect("~/View/TransactionQueue.aspx");
         }
+
+        protected void Button_Report_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/ReportTransaction.aspx");
+        }
     }
 }
