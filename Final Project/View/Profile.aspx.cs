@@ -95,7 +95,7 @@ namespace Final_Project.View
                 return;
             }
 
-            Response<MsUser> updatePassword = UserHandler.checkUpdatePassword(user.UserID, user.UserPassword, newPassword, currentPassword);
+            Response<MsUser> updatePassword = UserHandler.checkUpdatePassword(user.UserID, user.UserPassword, newPassword, confirmationPassword);
             if (!updatePassword.Success)
             {
                 Lbl_error2.Visible = true;
