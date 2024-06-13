@@ -17,7 +17,7 @@
             </asp:GridView>
         </asp:Panel>
         <asp:Panel ID="supplement_list" runat="server">
-            <asp:GridView ID="GridView2" runat="server" DataKeyNames="SupplementID" AutoGenerateColumns="False" CssClass="grid-view">
+            <asp:GridView ID="GridView2" runat="server" DataKeyNames="SupplementID" AutoGenerateColumns="False" CssClass="grid-view" EnableViewState="true">
                 <Columns>
                     <asp:BoundField DataField="SupplementID" HeaderText="ID" SortExpression="SupplementID" Visible="false" ItemStyle-CssClass="center-column" />
                     <asp:BoundField DataField="SupplementName" HeaderText="Name" SortExpression="SupplementName" />
@@ -35,6 +35,15 @@
             <asp:Button ID="Btn_clear" runat="server" Text="Clear Cart" OnClick="Btn_clear_Click" />
             <asp:Button ID="Btn_add" runat="server" Text="Add to Cart" onclick="Btn_addToCart_Click"/>
             <asp:Button ID="Btn_order" runat="server" Text="Order" OnClick="Btn_order_Click" />
+
+             <asp:GridView ID="GridView3" runat="server" DataKeyNames="SupplementID" AutoGenerateColumns="False" CssClass="grid-view" EnableViewState="true">
+                <Columns>
+                    <asp:BoundField DataField="CartID" HeaderText="ID" SortExpression="CartID" Visible="false" ItemStyle-CssClass="center-column" />
+                    <asp:BoundField DataField="UserID" HeaderText="User ID" SortExpression="UserID" />
+                    <asp:BoundField DataField="SupplementID" HeaderText="Supplement ID" SortExpression="SupplementID" />
+                    <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+                </Columns>
+            </asp:GridView>
         </asp:Panel>
 
     </div>

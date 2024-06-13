@@ -33,7 +33,9 @@ namespace Final_Project.View
                 GridView2.DataSource = SupplementHandler.GetAllSupplements();
                 GridView2.DataBind();
             }
+
         }
+
 
         private MsUser GetUserFromSessionOrCookie()
         {
@@ -71,6 +73,7 @@ namespace Final_Project.View
         {
             MsUser user = Session["user"] as MsUser;
             int i = 0;
+            bool addItemStatus = false;
             
             foreach (GridViewRow row in GridView2.Rows)
             {
@@ -82,15 +85,19 @@ namespace Final_Project.View
                     
                     if (!cartQuantity.Success)
                     {
-                        Lbl_status.Text = cartQuantity.Message;
                         i++;
                         continue;
                     }
                     else
                     {
                         CartHandler.AddToCart(user.UserID, GridView2.DataKeys[i].Value.ToString(), cartQuantity.Data);
-                        Lbl_status.Text = "Order saved to cart successfully!";
+                        addItemStatus = true;
                     }
+                }
+
+                if(addItemStatus)
+                {
+                    Lbl_status.Text = "Order saved to cart successfully!";
                 }
                 else
                 {
@@ -98,6 +105,10 @@ namespace Final_Project.View
                 }
                 i++;
             }
+
+            MsUser curUser = GetUserFromSessionOrCookie();
+            GridView3.DataSource = CartRepository.GetCartByUserID(Convert.ToInt32(curUser.UserID));
+            GridView3.DataBind();
         }
 
         protected void Btn_order_Click(object sender, EventArgs e)
@@ -134,6 +145,10 @@ namespace Final_Project.View
                     quantityTextBox.Text = "";
                 }
             }
+
+            MsUser curUser = GetUserFromSessionOrCookie();
+            GridView3.DataSource = CartRepository.GetCartByUserID(Convert.ToInt32(curUser.UserID));
+            GridView3.DataBind();
 
         }
 
